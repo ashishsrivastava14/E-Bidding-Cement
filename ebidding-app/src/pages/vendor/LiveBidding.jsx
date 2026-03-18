@@ -14,7 +14,7 @@ export default function LiveBidding() {
   const [orders, setOrders] = useState(() => recalcRanks(mockOrders));
   const [selectedRow, setSelectedRow] = useState(null);
   const [searchText, setSearchText] = useState('');
-  const timer = useCountdown(600);
+  const timer = useCountdown(30);
 
   const setOrdersMemo = useCallback((fn) => {
     setOrders(typeof fn === 'function' ? fn : () => fn);

@@ -15,7 +15,7 @@ export default function LiveBidMonitor() {
     }));
     return recalcRanks(withBids);
   });
-  const timer = useCountdown(600);
+  const timer = useCountdown(30);
 
   const setOrdersMemo = useCallback((fn) => {
     setOrders(typeof fn === 'function' ? fn : () => fn);

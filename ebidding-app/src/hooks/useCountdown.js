@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 
-export function useCountdown(initialSeconds = 600) {
+export function useCountdown(initialSeconds = 30) {
   const [remaining, setRemaining] = useState(initialSeconds);
   const intervalRef = useRef(null);
 
