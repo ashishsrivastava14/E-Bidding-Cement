@@ -10,7 +10,7 @@ export default function KpiCard({ title, value, icon: Icon, color = 'yellow' }) 
         </div>
       )}
       <div>
-        <p className="text-xs text-gray-400 uppercase tracking-wider">{title}</p>
+        <p className="text-xs text-theme-subtle uppercase tracking-wider">{title}</p>
         <p className={`text-2xl font-heading font-bold ${textColor}`}>{value}</p>
       </div>
     </div>

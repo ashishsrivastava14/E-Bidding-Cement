@@ -7,8 +7,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        yellow: { DEFAULT: '#F5C518', dark: '#d4a800' },
-        dark: { DEFAULT: '#1a1a1a', card: '#2c2c2c', row: '#333333', border: '#444444' }
+        yellow: { DEFAULT: 'var(--color-yellow)', dark: 'var(--color-yellow-dark)' },
+        dark: {
+          DEFAULT: 'var(--color-bg)',
+          card: 'var(--color-card)',
+          row: 'var(--color-row)',
+          border: 'var(--color-border)',
+        },
+        surface: 'var(--color-surface)',
+        theme: {
+          DEFAULT: 'var(--color-text)',
+          muted: 'var(--color-text-muted)',
+          subtle: 'var(--color-text-subtle)',
+          faint: 'var(--color-text-faint)',
+        },
       },
       fontFamily: {
         heading: ['"Barlow Condensed"', 'sans-serif'],

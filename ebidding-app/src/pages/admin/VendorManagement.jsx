@@ -44,7 +44,7 @@ export default function VendorManagement() {
       </div>
 
       <div className="bg-dark-card border border-dark-border rounded-lg overflow-x-auto">
-        <table className="w-full text-sm">
+        <table className="w-full text-sm text-theme">
           <thead>
             <tr className="bg-yellow text-black">
               {['Vendor ID', 'Name', 'Contact', 'Depots Assigned', 'Status', 'Last Bid', 'Actions'].map(h => (
@@ -62,7 +62,7 @@ export default function VendorManagement() {
                 <td className="py-2 px-3"><StatusBadge status={v.status} /></td>
                 <td className="py-2 px-3 text-xs">{v.lastBid}</td>
                 <td className="py-2 px-3">
-                  <button onClick={() => toggleStatus(v.id)} className="text-gray-400 hover:text-yellow" title="Toggle Status">
+                  <button onClick={() => toggleStatus(v.id)} className="text-theme-subtle hover:text-yellow" title="Toggle Status">
                     {v.status === 'Active' ? <ToggleRight size={20} className="text-green-400" /> : <ToggleLeft size={20} className="text-gray-500" />}
                   </button>
                 </td>
@@ -76,18 +76,18 @@ export default function VendorManagement() {
       <Modal title="Add New Vendor" isOpen={showAdd} onClose={() => setShowAdd(false)}>
         <div className="space-y-3">
           <div>
-            <label className="block text-xs text-gray-400 mb-1">Vendor Name</label>
-            <input className="w-full bg-dark border border-dark-border text-white text-sm py-2 px-3 rounded outline-none" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
+            <label className="block text-xs text-theme-subtle mb-1">Vendor Name</label>
+            <input className="w-full bg-dark border border-dark-border text-theme text-sm py-2 px-3 rounded outline-none" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
           </div>
           <div>
-            <label className="block text-xs text-gray-400 mb-1">Contact Number</label>
-            <input className="w-full bg-dark border border-dark-border text-white text-sm py-2 px-3 rounded outline-none" value={form.contact} onChange={e => setForm({ ...form, contact: e.target.value })} />
+            <label className="block text-xs text-theme-subtle mb-1">Contact Number</label>
+            <input className="w-full bg-dark border border-dark-border text-theme text-sm py-2 px-3 rounded outline-none" value={form.contact} onChange={e => setForm({ ...form, contact: e.target.value })} />
           </div>
           <div>
-            <label className="block text-xs text-gray-400 mb-1">Assign Depots</label>
+            <label className="block text-xs text-theme-subtle mb-1">Assign Depots</label>
             <div className="bg-dark border border-dark-border rounded p-2 max-h-40 overflow-y-auto space-y-1">
               {depotList.map(d => (
-                <label key={d.code} className="flex items-center gap-2 text-xs cursor-pointer hover:text-yellow">
+                <label key={d.code} className="flex items-center gap-2 text-xs text-theme cursor-pointer hover:text-yellow">
                   <input
                     type="checkbox"
                     className="accent-yellow"

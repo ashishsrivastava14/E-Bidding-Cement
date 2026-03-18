@@ -54,54 +54,54 @@ export default function TenderManagement() {
   const FormFields = () => (
     <div className="space-y-3">
       <div>
-        <label className="block text-xs text-gray-400 mb-1">Plant</label>
-        <select className="w-full bg-dark border border-dark-border text-white text-sm py-2 px-3 rounded outline-none" value={form.plant} onChange={e => setForm({ ...form, plant: e.target.value })}>
+        <label className="block text-xs text-theme-subtle mb-1">Plant</label>
+        <select className="w-full bg-dark border border-dark-border text-theme text-sm py-2 px-3 rounded outline-none" value={form.plant} onChange={e => setForm({ ...form, plant: e.target.value })}>
           {plants.map(p => <option key={p} value={p}>{p}</option>)}
         </select>
       </div>
       <div>
-        <label className="block text-xs text-gray-400 mb-1">Depot</label>
-        <select className="w-full bg-dark border border-dark-border text-white text-sm py-2 px-3 rounded outline-none" value={form.depot} onChange={e => setForm({ ...form, depot: e.target.value })}>
+        <label className="block text-xs text-theme-subtle mb-1">Depot</label>
+        <select className="w-full bg-dark border border-dark-border text-theme text-sm py-2 px-3 rounded outline-none" value={form.depot} onChange={e => setForm({ ...form, depot: e.target.value })}>
           <option value="">Select Depot</option>
           {depotList.map(d => <option key={d.code} value={d.name}>{d.name}</option>)}
         </select>
       </div>
       <div>
-        <label className="block text-xs text-gray-400 mb-1">Route</label>
-        <input className="w-full bg-dark border border-dark-border text-white text-sm py-2 px-3 rounded outline-none" placeholder="e.g., TANDA → SITAPUR" value={form.route} onChange={e => setForm({ ...form, route: e.target.value })} />
+        <label className="block text-xs text-theme-subtle mb-1">Route</label>
+        <input className="w-full bg-dark border border-dark-border text-theme text-sm py-2 px-3 rounded outline-none" placeholder="e.g., TANDA → SITAPUR" value={form.route} onChange={e => setForm({ ...form, route: e.target.value })} />
       </div>
       <div className="grid grid-cols-2 gap-3">
         <div>
-          <label className="block text-xs text-gray-400 mb-1">Order Type</label>
-          <select className="w-full bg-dark border border-dark-border text-white text-sm py-2 px-3 rounded outline-none" value={form.orderType} onChange={e => setForm({ ...form, orderType: e.target.value })}>
+          <label className="block text-xs text-theme-subtle mb-1">Order Type</label>
+          <select className="w-full bg-dark border border-dark-border text-theme text-sm py-2 px-3 rounded outline-none" value={form.orderType} onChange={e => setForm({ ...form, orderType: e.target.value })}>
             <option value="1">Customer Order</option>
             <option value="2">Transfer Order</option>
           </select>
         </div>
         <div>
-          <label className="block text-xs text-gray-400 mb-1">Quantity</label>
-          <input type="number" className="w-full bg-dark border border-dark-border text-white text-sm py-2 px-3 rounded outline-none" value={form.quantity} onChange={e => setForm({ ...form, quantity: e.target.value })} />
+          <label className="block text-xs text-theme-subtle mb-1">Quantity</label>
+          <input type="number" className="w-full bg-dark border border-dark-border text-theme text-sm py-2 px-3 rounded outline-none" value={form.quantity} onChange={e => setForm({ ...form, quantity: e.target.value })} />
         </div>
       </div>
       <div>
-        <label className="block text-xs text-gray-400 mb-1">Base Freight (₹)</label>
-        <input type="number" className="w-full bg-dark border border-dark-border text-white text-sm py-2 px-3 rounded outline-none" value={form.baseFreight} onChange={e => setForm({ ...form, baseFreight: e.target.value })} />
+        <label className="block text-xs text-theme-subtle mb-1">Base Freight (₹)</label>
+        <input type="number" className="w-full bg-dark border border-dark-border text-theme text-sm py-2 px-3 rounded outline-none" value={form.baseFreight} onChange={e => setForm({ ...form, baseFreight: e.target.value })} />
       </div>
       <div className="grid grid-cols-2 gap-3">
         <div>
-          <label className="block text-xs text-gray-400 mb-1">Start Time</label>
-          <input type="datetime-local" className="w-full bg-dark border border-dark-border text-white text-sm py-2 px-3 rounded outline-none" value={form.startTime} onChange={e => setForm({ ...form, startTime: e.target.value })} />
+          <label className="block text-xs text-theme-subtle mb-1">Start Time</label>
+          <input type="datetime-local" className="w-full bg-dark border border-dark-border text-theme text-sm py-2 px-3 rounded outline-none" value={form.startTime} onChange={e => setForm({ ...form, startTime: e.target.value })} />
         </div>
         <div>
-          <label className="block text-xs text-gray-400 mb-1">End Time</label>
-          <input type="datetime-local" className="w-full bg-dark border border-dark-border text-white text-sm py-2 px-3 rounded outline-none" value={form.endTime} onChange={e => setForm({ ...form, endTime: e.target.value })} />
+          <label className="block text-xs text-theme-subtle mb-1">End Time</label>
+          <input type="datetime-local" className="w-full bg-dark border border-dark-border text-theme text-sm py-2 px-3 rounded outline-none" value={form.endTime} onChange={e => setForm({ ...form, endTime: e.target.value })} />
         </div>
       </div>
       <div>
-        <label className="block text-xs text-gray-400 mb-1">Assign Vendors</label>
+        <label className="block text-xs text-theme-subtle mb-1">Assign Vendors</label>
         <div className="bg-dark border border-dark-border rounded p-2 max-h-32 overflow-y-auto space-y-1">
           {mockVendors.filter(v => v.status === 'Active').map(v => (
-            <label key={v.id} className="flex items-center gap-2 text-xs cursor-pointer hover:text-yellow">
+            <label key={v.id} className="flex items-center gap-2 text-xs text-theme cursor-pointer hover:text-yellow">
               <input
                 type="checkbox"
                 className="accent-yellow"
@@ -131,7 +131,7 @@ export default function TenderManagement() {
       </div>
 
       <div className="bg-dark-card border border-dark-border rounded-lg overflow-x-auto">
-        <table className="w-full text-sm">
+        <table className="w-full text-sm text-theme">
           <thead>
             <tr className="bg-yellow text-black">
               {['Tender ID', 'Route', 'Depot', 'Quantity', 'Base Freight', 'Status', 'Created', 'Actions'].map(h => (
@@ -151,9 +151,9 @@ export default function TenderManagement() {
                 <td className="py-2 px-3 text-xs">{t.created}</td>
                 <td className="py-2 px-3">
                   <div className="flex gap-1">
-                    <button onClick={() => setShowView(t)} className="p-1 text-gray-400 hover:text-yellow" title="View"><Eye size={14} /></button>
-                    <button onClick={() => { setEditTender(t); setForm({ ...form, depot: t.depot, route: t.route, quantity: t.quantity, baseFreight: t.baseFreight }); }} className="p-1 text-gray-400 hover:text-yellow" title="Edit"><Edit size={14} /></button>
-                    <button onClick={() => handleDelete(t.id)} className="p-1 text-gray-400 hover:text-red-400" title="Delete"><Trash2 size={14} /></button>
+                    <button onClick={() => setShowView(t)} className="p-1 text-theme-subtle hover:text-yellow" title="View"><Eye size={14} /></button>
+                    <button onClick={() => { setEditTender(t); setForm({ ...form, depot: t.depot, route: t.route, quantity: t.quantity, baseFreight: t.baseFreight }); }} className="p-1 text-theme-subtle hover:text-yellow" title="Edit"><Edit size={14} /></button>
+                    <button onClick={() => handleDelete(t.id)} className="p-1 text-theme-subtle hover:text-red-400" title="Delete"><Trash2 size={14} /></button>
                     <button onClick={() => toggleBidding(t.id)} className={`p-1 ${t.status === 'ACTIVE' ? 'text-red-400 hover:text-red-300' : 'text-green-400 hover:text-green-300'}`} title={t.status === 'ACTIVE' ? 'Stop Bidding' : 'Start Bidding'}>
                       {t.status === 'ACTIVE' ? <Square size={14} /> : <Play size={14} />}
                     </button>
@@ -187,13 +187,13 @@ export default function TenderManagement() {
       <Modal title={`Tender Details: ${showView?.id || ''}`} isOpen={!!showView} onClose={() => setShowView(null)}>
         {showView && (
           <div className="space-y-2 text-sm">
-            <p><span className="text-gray-400">Route:</span> {showView.route}</p>
-            <p><span className="text-gray-400">Depot:</span> {showView.depot}</p>
-            <p><span className="text-gray-400">Quantity:</span> {showView.quantity}</p>
-            <p><span className="text-gray-400">Base Freight:</span> ₹{showView.baseFreight}</p>
-            <p><span className="text-gray-400">Status:</span> <StatusBadge status={showView.status} /></p>
-            <p><span className="text-gray-400">Created:</span> {showView.created}</p>
-            <p><span className="text-gray-400">Assigned Vendors:</span> {showView.vendors?.length || 0}</p>
+            <p><span className="text-theme-subtle">Route:</span> {showView.route}</p>
+            <p><span className="text-theme-subtle">Depot:</span> {showView.depot}</p>
+            <p><span className="text-theme-subtle">Quantity:</span> {showView.quantity}</p>
+            <p><span className="text-theme-subtle">Base Freight:</span> ₹{showView.baseFreight}</p>
+            <p><span className="text-theme-subtle">Status:</span> <StatusBadge status={showView.status} /></p>
+            <p><span className="text-theme-subtle">Created:</span> {showView.created}</p>
+            <p><span className="text-theme-subtle">Assigned Vendors:</span> {showView.vendors?.length || 0}</p>
           </div>
         )}
       </Modal>

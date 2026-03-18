@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Outlet, NavLink, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, ShoppingCart, LogOut, Menu } from 'lucide-react';
+import { LayoutDashboard, ShoppingCart, LogOut, Menu, Sun, Moon } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 
 export default function CustomerLayout() {
   const [collapsed, setCollapsed] = useState(false);
   const navigate = useNavigate();
+  const { theme, toggleTheme } = useTheme();
 
   const links = [
     { to: '/customer/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
@@ -13,7 +15,7 @@ export default function CustomerLayout() {
 
   return (
     <div className="h-screen flex flex-col">
-      <nav className="bg-black px-4 py-2 flex items-center justify-between border-b border-dark-border shrink-0">
+      <nav className="bg-surface px-4 py-2 flex items-center justify-between border-b border-dark-border shrink-0">
         <div className="flex items-center gap-3">
           <button onClick={() => setCollapsed(!collapsed)} className="text-yellow hover:text-yellow-dark">
             <Menu size={20} />
@@ -22,15 +24,18 @@ export default function CustomerLayout() {
           <span className="text-xs bg-yellow text-black px-2 py-0.5 rounded font-bold">CUSTOMER</span>
         </div>
         <div className="flex items-center gap-4">
-          <span className="text-sm text-gray-300">Customer Panel</span>
-          <button onClick={() => navigate('/login')} className="text-gray-400 hover:text-red-400">
+          <span className="text-sm text-theme-muted">Customer Panel</span>
+          <button onClick={toggleTheme} className="text-theme-subtle hover:text-yellow" title="Toggle theme">
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+          <button onClick={() => navigate('/login')} className="text-theme-subtle hover:text-red-400">
             <LogOut size={18} />
           </button>
         </div>
       </nav>
 
       <div className="flex flex-1 overflow-hidden">
-        <aside className={`bg-black border-r border-dark-border transition-all duration-200 shrink-0 ${collapsed ? 'w-14' : 'w-48'}`}>
+        <aside className={`bg-surface border-r border-dark-border transition-all duration-200 shrink-0 ${collapsed ? 'w-14' : 'w-48'}`}>
           <div className="flex flex-col py-2">
             {links.map(link => (
               <NavLink
@@ -38,7 +43,7 @@ export default function CustomerLayout() {
                 to={link.to}
                 className={({ isActive }) =>
                   `flex items-center gap-3 px-4 py-3 text-sm transition-colors ${
-                    isActive ? 'bg-yellow text-black font-bold' : 'text-gray-300 hover:bg-dark-row hover:text-white'
+                    isActive ? 'bg-yellow text-black font-bold' : 'text-theme-muted hover:bg-dark-row hover:text-theme'
                   }`
                 }
               >

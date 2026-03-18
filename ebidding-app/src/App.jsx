@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 import LoginPage from './pages/Login/LoginPage';
 
@@ -25,6 +26,7 @@ import Subscriptions from './pages/superadmin/Subscriptions';
 
 export default function App() {
   return (
+    <ThemeProvider>
     <Routes>
       <Route path="/login" element={<LoginPage />} />
 
@@ -64,5 +66,6 @@ export default function App() {
       {/* Default */}
       <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>
+    </ThemeProvider>
   );
 }

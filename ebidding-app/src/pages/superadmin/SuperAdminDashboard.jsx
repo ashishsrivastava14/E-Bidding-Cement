@@ -19,10 +19,10 @@ export default function SuperAdminDashboard() {
         <h2 className="font-heading font-bold text-lg text-yellow mb-4">Platform Activity Over Time</h2>
         <ResponsiveContainer width="100%" height={350}>
           <AreaChart data={platformActivityData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#333" />
-            <XAxis dataKey="month" stroke="#888" fontSize={12} />
-            <YAxis stroke="#888" fontSize={12} />
-            <Tooltip contentStyle={{ backgroundColor: '#2c2c2c', border: '1px solid #444', color: '#fff' }} />
+            <CartesianGrid strokeDasharray="3 3" stroke="var(--color-chart-grid)" />
+            <XAxis dataKey="month" stroke="var(--color-chart-axis)" fontSize={12} />
+            <YAxis stroke="var(--color-chart-axis)" fontSize={12} />
+            <Tooltip contentStyle={{ backgroundColor: 'var(--color-card)', border: '1px solid var(--color-border)', color: 'var(--color-text)' }} />
             <Area type="monotone" dataKey="bids" stroke="#F5C518" fill="#F5C518" fillOpacity={0.15} strokeWidth={2} name="Total Bids" />
             <Area type="monotone" dataKey="companies" stroke="#22c55e" fill="#22c55e" fillOpacity={0.1} strokeWidth={2} name="Active Companies" />
           </AreaChart>

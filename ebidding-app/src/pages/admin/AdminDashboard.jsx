@@ -27,10 +27,10 @@ export default function AdminDashboard() {
           <h2 className="font-heading font-bold text-lg text-yellow mb-4">Bids per Depot</h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={bidsPerDepot} layout="vertical">
-              <CartesianGrid strokeDasharray="3 3" stroke="#333" />
-              <XAxis type="number" stroke="#888" fontSize={11} />
-              <YAxis type="category" dataKey="name" stroke="#888" fontSize={10} width={100} />
-              <Tooltip contentStyle={{ backgroundColor: '#2c2c2c', border: '1px solid #444', color: '#fff' }} />
+              <CartesianGrid strokeDasharray="3 3" stroke="var(--color-chart-grid)" />
+              <XAxis type="number" stroke="var(--color-chart-axis)" fontSize={11} />
+              <YAxis type="category" dataKey="name" stroke="var(--color-chart-axis)" fontSize={10} width={100} />
+              <Tooltip contentStyle={{ backgroundColor: 'var(--color-card)', border: '1px solid var(--color-border)', color: 'var(--color-text)' }} />
               <Bar dataKey="bids" fill="#F5C518" radius={[0, 4, 4, 0]} />
             </BarChart>
           </ResponsiveContainer>
@@ -46,7 +46,7 @@ export default function AdminDashboard() {
                   <Cell key={i} fill={PIE_COLORS[i % PIE_COLORS.length]} />
                 ))}
               </Pie>
-              <Tooltip contentStyle={{ backgroundColor: '#2c2c2c', border: '1px solid #444', color: '#fff' }} />
+              <Tooltip contentStyle={{ backgroundColor: 'var(--color-card)', border: '1px solid var(--color-border)', color: 'var(--color-text)' }} />
               <Legend />
             </PieChart>
           </ResponsiveContainer>
@@ -58,8 +58,8 @@ export default function AdminDashboard() {
           <div className="space-y-3 max-h-[320px] overflow-y-auto">
             {recentAdminActivity.map((a, i) => (
               <div key={i} className="flex gap-3 items-start text-xs border-b border-dark-border pb-2">
-                <span className="text-gray-500 shrink-0 w-16">{a.time}</span>
-                <span className="text-gray-300">{a.text}</span>
+                <span className="text-theme-faint shrink-0 w-16">{a.time}</span>
+                <span className="text-theme-muted">{a.text}</span>
               </div>
             ))}
           </div>

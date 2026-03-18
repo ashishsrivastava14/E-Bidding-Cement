@@ -64,12 +64,12 @@ export default function ColumnPickerModal({ columns, visibleColumns, setVisibleC
         <div className="p-3 border-b border-dark-border">
           <div className="flex items-center bg-dark border border-dark-border rounded px-2">
             <input
-              className="bg-transparent text-white text-sm py-2 flex-1 outline-none"
+              className="bg-transparent text-theme text-sm py-2 flex-1 outline-none"
               placeholder="Search"
               value={search}
               onChange={e => setSearch(e.target.value)}
             />
-            <Search size={16} className="text-gray-400" />
+            <Search size={16} className="text-theme-subtle" />
           </div>
         </div>
 
@@ -88,7 +88,7 @@ export default function ColumnPickerModal({ columns, visibleColumns, setVisibleC
           className="flex items-center gap-3 px-4 py-2 border-b border-dark-border cursor-pointer hover:bg-dark-row"
           onClick={toggleAll}
         >
-          <div className={`w-5 h-5 border-2 rounded flex items-center justify-center ${allVisible ? 'bg-yellow border-yellow' : 'border-gray-500'}`}>
+          <div className={`w-5 h-5 border-2 rounded flex items-center justify-center ${allVisible ? 'bg-yellow border-yellow' : 'border-theme-faint'}`}>
             {allVisible && <Check size={14} className="text-black" />}
           </div>
           <span className="text-sm font-medium">Select All</span>
@@ -103,8 +103,8 @@ export default function ColumnPickerModal({ columns, visibleColumns, setVisibleC
                 key={col.key}
                 className="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-dark-row group"
               >
-                <div
-                  className={`w-5 h-5 border-2 rounded flex items-center justify-center shrink-0 ${checked ? 'bg-yellow border-yellow' : 'border-gray-500'}`}
+                  <div
+                  className={`w-5 h-5 border-2 rounded flex items-center justify-center shrink-0 ${checked ? 'bg-yellow border-yellow' : 'border-theme-faint'}`}
                   onClick={() => toggle(col.key)}
                 >
                   {checked && <Check size={14} className="text-black" />}

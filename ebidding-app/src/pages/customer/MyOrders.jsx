@@ -19,7 +19,7 @@ export default function MyOrders() {
       <h1 className="font-heading font-bold text-2xl text-yellow">My Orders</h1>
 
       <div className="bg-dark-card border border-dark-border rounded-lg overflow-x-auto">
-        <table className="w-full text-sm">
+        <table className="w-full text-sm text-theme">
           <thead>
             <tr className="bg-yellow text-black">
               {['Order ID', 'Depot', 'Destination', 'Quantity', 'Status', 'L1 Bid', 'Assigned Vendor'].map(h => (
@@ -52,19 +52,19 @@ export default function MyOrders() {
         {selectedOrder && (
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-3 text-sm">
-              <p><span className="text-gray-400">Order ID:</span> {selectedOrder.id}</p>
-              <p><span className="text-gray-400">Depot:</span> {selectedOrder.depot}</p>
-              <p><span className="text-gray-400">Destination:</span> {selectedOrder.destination}</p>
-              <p><span className="text-gray-400">Quantity:</span> {selectedOrder.quantity}</p>
-              <p><span className="text-gray-400">Status:</span> <StatusBadge status={selectedOrder.status} /></p>
-              <p><span className="text-gray-400">L1 Bid:</span> ₹{selectedOrder.l1Bid}</p>
+              <p><span className="text-theme-subtle">Order ID:</span> {selectedOrder.id}</p>
+              <p><span className="text-theme-subtle">Depot:</span> {selectedOrder.depot}</p>
+              <p><span className="text-theme-subtle">Destination:</span> {selectedOrder.destination}</p>
+              <p><span className="text-theme-subtle">Quantity:</span> {selectedOrder.quantity}</p>
+              <p><span className="text-theme-subtle">Status:</span> <StatusBadge status={selectedOrder.status} /></p>
+              <p><span className="text-theme-subtle">L1 Bid:</span> ₹{selectedOrder.l1Bid}</p>
             </div>
 
             <div>
               <h3 className="font-heading font-bold text-yellow mb-2">Bid History</h3>
-              <table className="w-full text-sm">
+              <table className="w-full text-sm text-theme">
                 <thead>
-                  <tr className="border-b border-dark-border text-gray-400 text-xs">
+                  <tr className="border-b border-dark-border text-theme-subtle text-xs">
                     <th className="text-left py-2">Vendor</th>
                     <th className="text-left py-2">Bid Amount</th>
                     <th className="text-left py-2">Rank</th>

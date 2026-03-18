@@ -35,7 +35,7 @@ export default function Companies() {
       </div>
 
       <div className="bg-dark-card border border-dark-border rounded-lg overflow-x-auto">
-        <table className="w-full text-sm">
+        <table className="w-full text-sm text-theme">
           <thead>
             <tr className="bg-yellow text-black">
               {['Company ID', 'Name', 'Plan', 'Users', 'Status', 'Joined'].map(h => (
@@ -65,20 +65,20 @@ export default function Companies() {
       <Modal title="Add New Company" isOpen={showAdd} onClose={() => setShowAdd(false)}>
         <div className="space-y-3">
           <div>
-            <label className="block text-xs text-gray-400 mb-1">Company Name</label>
-            <input className="w-full bg-dark border border-dark-border text-white text-sm py-2 px-3 rounded outline-none" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
+            <label className="block text-xs text-theme-subtle mb-1">Company Name</label>
+            <input className="w-full bg-dark border border-dark-border text-theme text-sm py-2 px-3 rounded outline-none" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
           </div>
           <div>
-            <label className="block text-xs text-gray-400 mb-1">Plan</label>
-            <select className="w-full bg-dark border border-dark-border text-white text-sm py-2 px-3 rounded outline-none" value={form.plan} onChange={e => setForm({ ...form, plan: e.target.value })}>
+            <label className="block text-xs text-theme-subtle mb-1">Plan</label>
+            <select className="w-full bg-dark border border-dark-border text-theme text-sm py-2 px-3 rounded outline-none" value={form.plan} onChange={e => setForm({ ...form, plan: e.target.value })}>
               <option value="Basic">Basic</option>
               <option value="Professional">Professional</option>
               <option value="Enterprise">Enterprise</option>
             </select>
           </div>
           <div>
-            <label className="block text-xs text-gray-400 mb-1">Number of Users</label>
-            <input type="number" className="w-full bg-dark border border-dark-border text-white text-sm py-2 px-3 rounded outline-none" value={form.users} onChange={e => setForm({ ...form, users: e.target.value })} />
+            <label className="block text-xs text-theme-subtle mb-1">Number of Users</label>
+            <input type="number" className="w-full bg-dark border border-dark-border text-theme text-sm py-2 px-3 rounded outline-none" value={form.users} onChange={e => setForm({ ...form, users: e.target.value })} />
           </div>
         </div>
         <div className="flex justify-end gap-2 mt-4">

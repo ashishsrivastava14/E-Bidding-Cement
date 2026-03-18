@@ -44,9 +44,9 @@ export default function BidHistory() {
       {/* Filters */}
       <div className="flex flex-wrap gap-3 items-end">
         <div>
-          <label className="block text-xs text-gray-400 mb-1">Status</label>
+          <label className="block text-xs text-theme-subtle mb-1">Status</label>
           <select
-            className="bg-dark border border-dark-border text-white text-sm py-2 px-3 rounded outline-none"
+            className="bg-dark border border-dark-border text-theme text-sm py-2 px-3 rounded outline-none"
             value={statusFilter}
             onChange={e => setStatusFilter(e.target.value)}
           >
@@ -57,22 +57,22 @@ export default function BidHistory() {
           </select>
         </div>
         <div>
-          <label className="block text-xs text-gray-400 mb-1">Date From</label>
-          <input type="date" className="bg-dark border border-dark-border text-white text-sm py-2 px-3 rounded outline-none" value={dateFrom} onChange={e => setDateFrom(e.target.value)} />
+          <label className="block text-xs text-theme-subtle mb-1">Date From</label>
+          <input type="date" className="bg-dark border border-dark-border text-theme text-sm py-2 px-3 rounded outline-none" value={dateFrom} onChange={e => setDateFrom(e.target.value)} />
         </div>
         <div>
-          <label className="block text-xs text-gray-400 mb-1">Date To</label>
-          <input type="date" className="bg-dark border border-dark-border text-white text-sm py-2 px-3 rounded outline-none" value={dateTo} onChange={e => setDateTo(e.target.value)} />
+          <label className="block text-xs text-theme-subtle mb-1">Date To</label>
+          <input type="date" className="bg-dark border border-dark-border text-theme text-sm py-2 px-3 rounded outline-none" value={dateTo} onChange={e => setDateTo(e.target.value)} />
         </div>
         <div className="flex items-center bg-dark border border-dark-border rounded px-2">
-          <input className="bg-transparent text-white text-sm py-2 w-40 outline-none" placeholder="Search orders..." value={search} onChange={e => setSearch(e.target.value)} />
-          <Search size={14} className="text-gray-400" />
+          <input className="bg-transparent text-theme text-sm py-2 w-40 outline-none" placeholder="Search orders..." value={search} onChange={e => setSearch(e.target.value)} />
+          <Search size={14} className="text-theme-subtle" />
         </div>
       </div>
 
       {/* Table */}
       <div className="bg-dark-card border border-dark-border rounded-lg overflow-x-auto">
-        <table className="w-full text-sm">
+        <table className="w-full text-sm text-theme">
           <thead>
             <tr className="bg-yellow text-black">
               <th className="text-left py-2 px-3 text-xs font-heading font-semibold">ID</th>

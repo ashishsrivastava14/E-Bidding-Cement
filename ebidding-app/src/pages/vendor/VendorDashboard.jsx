@@ -24,10 +24,10 @@ export default function VendorDashboard() {
         <h2 className="font-heading font-bold text-lg text-yellow mb-4">My Bidding Activity (Last 7 Days)</h2>
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={biddingActivityData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#333" />
-            <XAxis dataKey="day" stroke="#888" fontSize={12} />
-            <YAxis stroke="#888" fontSize={12} />
-            <Tooltip contentStyle={{ backgroundColor: '#2c2c2c', border: '1px solid #444', color: '#fff' }} />
+            <CartesianGrid strokeDasharray="3 3" stroke="var(--color-chart-grid)" />
+            <XAxis dataKey="day" stroke="var(--color-chart-axis)" fontSize={12} />
+            <YAxis stroke="var(--color-chart-axis)" fontSize={12} />
+            <Tooltip contentStyle={{ backgroundColor: 'var(--color-card)', border: '1px solid var(--color-border)', color: 'var(--color-text)' }} />
             <Legend />
             <Line type="monotone" dataKey="bids" stroke="#F5C518" strokeWidth={2} name="Total Bids" dot={{ fill: '#F5C518' }} />
             <Line type="monotone" dataKey="won" stroke="#22c55e" strokeWidth={2} name="Won" dot={{ fill: '#22c55e' }} />
@@ -39,9 +39,9 @@ export default function VendorDashboard() {
       <div className="bg-dark-card border border-dark-border rounded-lg p-4">
         <h2 className="font-heading font-bold text-lg text-yellow mb-4">Recent Bid Activity</h2>
         <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+          <table className="w-full text-sm text-theme">
             <thead>
-              <tr className="border-b border-dark-border text-gray-400 text-xs">
+              <tr className="border-b border-dark-border text-theme-subtle text-xs">
                 <th className="text-left py-2 px-3">Order ID</th>
                 <th className="text-left py-2 px-3">Depot</th>
                 <th className="text-left py-2 px-3">Bid Amount</th>

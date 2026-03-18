@@ -2,6 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-yellow: #F5C518;
+  --color-yellow-dark: #d4a800;
+  --color-bg: #1a1a1a;
+  --color-card: #2c2c2c;
+  --color-row: #333333;
+  --color-border: #444444;
+  --color-surface: #000000;
+  --color-text: #ffffff;
+  --color-text-muted: #d1d5db;
+  --color-text-subtle: #9ca3af;
+  --color-text-faint: #6b7280;
+  --color-scrollbar-track: #1a1a1a;
+  --color-scrollbar-thumb: #444444;
+  --color-chart-grid: #333333;
+  --color-chart-axis: #888888;
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --color-yellow: #b45309;
+  --color-yellow-dark: #92400e;
+  --color-bg: #f3f4f6;
+  --color-card: #ffffff;
+  --color-row: #f9fafb;
+  --color-border: #d1d5db;
+  --color-surface: #ffffff;
+  --color-text: #000000;
+  --color-text-muted: #000000;
+  --color-text-subtle: #000000;
+  --color-text-faint: #000000;
+  --color-scrollbar-track: #f3f4f6;
+  --color-scrollbar-thumb: #d1d5db;
+  --color-chart-grid: #e5e7eb;
+  --color-chart-axis: #000000;
+  color-scheme: light;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,8 +47,8 @@
 }
 
 body {
-  background-color: #1a1a1a;
-  color: #ffffff;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   font-family: 'Inter', sans-serif;
 }
 
@@ -19,10 +57,10 @@ body {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: var(--color-scrollbar-track);
 }
 ::-webkit-scrollbar-thumb {
-  background: #444;
+  background: var(--color-scrollbar-thumb);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {

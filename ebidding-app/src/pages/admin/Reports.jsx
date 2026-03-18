@@ -35,25 +35,25 @@ export default function Reports() {
       {/* Filters */}
       <div className="flex flex-wrap gap-3 items-end">
         <div>
-          <label className="block text-xs text-gray-400 mb-1">Date From</label>
-          <input type="date" className="bg-dark border border-dark-border text-white text-sm py-2 px-3 rounded outline-none" value={dateFrom} onChange={e => setDateFrom(e.target.value)} />
+          <label className="block text-xs text-theme-subtle mb-1">Date From</label>
+          <input type="date" className="bg-dark border border-dark-border text-theme text-sm py-2 px-3 rounded outline-none" value={dateFrom} onChange={e => setDateFrom(e.target.value)} />
         </div>
         <div>
-          <label className="block text-xs text-gray-400 mb-1">Date To</label>
-          <input type="date" className="bg-dark border border-dark-border text-white text-sm py-2 px-3 rounded outline-none" value={dateTo} onChange={e => setDateTo(e.target.value)} />
+          <label className="block text-xs text-theme-subtle mb-1">Date To</label>
+          <input type="date" className="bg-dark border border-dark-border text-theme text-sm py-2 px-3 rounded outline-none" value={dateTo} onChange={e => setDateTo(e.target.value)} />
         </div>
         <div>
-          <label className="block text-xs text-gray-400 mb-1">Depot</label>
-          <select className="bg-dark border border-dark-border text-white text-sm py-2 px-3 rounded outline-none" value={depot} onChange={e => setDepot(e.target.value)}>
+          <label className="block text-xs text-theme-subtle mb-1">Depot</label>
+          <select className="bg-dark border border-dark-border text-theme text-sm py-2 px-3 rounded outline-none" value={depot} onChange={e => setDepot(e.target.value)}>
             <option value="">All</option>
             {depotList.map(d => <option key={d.code} value={d.name}>{d.name}</option>)}
           </select>
         </div>
         <div>
-          <label className="block text-xs text-gray-400 mb-1">Tender ID</label>
+          <label className="block text-xs text-theme-subtle mb-1">Tender ID</label>
           <div className="flex items-center bg-dark border border-dark-border rounded px-2">
-            <input className="bg-transparent text-white text-sm py-2 w-32 outline-none" placeholder="Search..." value={tenderId} onChange={e => setTenderId(e.target.value)} />
-            <Search size={14} className="text-gray-400" />
+            <input className="bg-transparent text-theme text-sm py-2 w-32 outline-none" placeholder="Search..." value={tenderId} onChange={e => setTenderId(e.target.value)} />
+            <Search size={14} className="text-theme-subtle" />
           </div>
         </div>
         <div className="flex gap-2">
@@ -68,7 +68,7 @@ export default function Reports() {
 
       {/* Table */}
       <div className="bg-dark-card border border-dark-border rounded-lg overflow-x-auto">
-        <table className="w-full text-sm">
+        <table className="w-full text-sm text-theme">
           <thead>
             <tr className="bg-yellow text-black">
               {['ID', 'Order ID', 'Depot', 'Destination', 'Bid Amount', 'Freight', 'Status', 'Date', 'Rank'].map(h => (

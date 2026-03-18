@@ -20,14 +20,14 @@ export default function Subscriptions() {
               </div>
             )}
             <h2 className="font-heading font-bold text-xl text-yellow text-center">{plan.name}</h2>
-            <p className="text-3xl font-bold text-white text-center mt-2">{plan.price}</p>
-            <p className="text-xs text-gray-400 text-center mb-4">{plan.activeCompanies} active companies</p>
+            <p className="text-3xl font-bold text-theme text-center mt-2">{plan.price}</p>
+            <p className="text-xs text-theme-subtle text-center mb-4">{plan.activeCompanies} active companies</p>
 
             <div className="flex-1 space-y-2 mb-6">
               {plan.features.map(f => (
                 <div key={f} className="flex items-center gap-2 text-sm">
                   <Check size={14} className="text-green-400 shrink-0" />
-                  <span className="text-gray-300">{f}</span>
+                  <span className="text-theme-muted">{f}</span>
                 </div>
               ))}
             </div>
@@ -35,7 +35,7 @@ export default function Subscriptions() {
             <button className={`w-full py-2.5 rounded-lg font-bold text-sm ${
               i === 2
                 ? 'bg-yellow text-black hover:bg-yellow-dark'
-                : 'bg-dark border border-dark-border text-white hover:border-yellow hover:text-yellow'
+                : 'bg-dark border border-dark-border text-theme hover:border-yellow hover:text-yellow'
             }`}>
               {i === 2 ? 'Current Plan' : 'Select Plan'}
             </button>

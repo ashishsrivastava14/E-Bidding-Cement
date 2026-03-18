@@ -31,7 +31,7 @@ export default function LiveBidding() {
   const handleSave = () => {
     toast.success('Bid saved successfully!', {
       icon: '✅',
-      style: { background: '#2c2c2c', color: '#fff', border: '1px solid #F5C518' },
+      style: { background: 'var(--color-card)', color: 'var(--color-text)', border: '1px solid var(--color-yellow)' },
     });
     setOrders(prev => recalcRanks(prev));
   };
@@ -51,12 +51,12 @@ export default function LiveBidding() {
           {/* Search */}
           <div className="flex items-center bg-dark border border-dark-border rounded px-2">
             <input
-              className="bg-transparent text-white text-xs py-1.5 w-40 outline-none"
+              className="bg-transparent text-theme text-xs py-1.5 w-40 outline-none"
               placeholder="Search"
               value={searchText}
               onChange={e => setSearchText(e.target.value)}
             />
-            <Search size={14} className="text-gray-400" />
+            <Search size={14} className="text-theme-subtle" />
           </div>
 
           {/* Save */}

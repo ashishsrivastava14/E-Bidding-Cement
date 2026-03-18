@@ -41,7 +41,7 @@ export default function DataTable({ data, onBidChange, editable = true, selected
         <input
           type="number"
           min={0}
-          className={`w-20 bg-dark border ${biddingClosed ? 'border-gray-600' : 'border-dark-border focus:border-yellow'} text-white text-sm py-1 px-2 rounded outline-none text-center`}
+          className={`w-20 bg-dark border ${biddingClosed ? 'border-dark-border' : 'border-dark-border focus:border-yellow'} text-theme text-sm py-1 px-2 rounded outline-none text-center`}
           value={row.bidAmount || ''}
           onChange={e => onBidChange?.(row.id, Number(e.target.value) || 0)}
           placeholder="0"
@@ -70,7 +70,7 @@ export default function DataTable({ data, onBidChange, editable = true, selected
       <div className="flex justify-end mb-1">
         <button
           onClick={() => setShowColumnPicker(true)}
-          className="p-1.5 hover:bg-dark-row rounded text-gray-400 hover:text-yellow"
+          className="p-1.5 hover:bg-dark-row rounded text-theme-subtle hover:text-yellow"
           title="Column Settings"
         >
           <Settings size={18} />
@@ -83,7 +83,7 @@ export default function DataTable({ data, onBidChange, editable = true, selected
             <span className="text-red-500 font-heading text-3xl font-bold tracking-widest">BIDDING CLOSED</span>
           </div>
         )}
-        <table className="w-full text-sm">
+        <table className="w-full text-sm text-theme">
           <thead className="sticky top-0 z-[5]">
             <tr className="bg-yellow text-black">
               <th className="px-2 py-2 text-left font-heading font-semibold text-xs whitespace-nowrap"></th>

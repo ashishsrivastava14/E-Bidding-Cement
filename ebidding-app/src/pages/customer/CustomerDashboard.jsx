@@ -19,10 +19,10 @@ export default function CustomerDashboard() {
         <h2 className="font-heading font-bold text-lg text-yellow mb-4">Order Trend (Last 7 Days)</h2>
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={orderTrendData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#333" />
-            <XAxis dataKey="day" stroke="#888" fontSize={12} />
-            <YAxis stroke="#888" fontSize={12} />
-            <Tooltip contentStyle={{ backgroundColor: '#2c2c2c', border: '1px solid #444', color: '#fff' }} />
+            <CartesianGrid strokeDasharray="3 3" stroke="var(--color-chart-grid)" />
+            <XAxis dataKey="day" stroke="var(--color-chart-axis)" fontSize={12} />
+            <YAxis stroke="var(--color-chart-axis)" fontSize={12} />
+            <Tooltip contentStyle={{ backgroundColor: 'var(--color-card)', border: '1px solid var(--color-border)', color: 'var(--color-text)' }} />
             <Line type="monotone" dataKey="orders" stroke="#F5C518" strokeWidth={2} dot={{ fill: '#F5C518' }} />
           </LineChart>
         </ResponsiveContainer>

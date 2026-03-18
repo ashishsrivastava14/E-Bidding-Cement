@@ -5,10 +5,10 @@ import { ChevronDown } from 'lucide-react';
 function SelectDropdown({ label, value, onChange, options, className = '' }) {
   return (
     <div className={className}>
-      <label className="block text-xs text-gray-400 mb-1">{label}</label>
+      <label className="block text-xs text-theme-subtle mb-1">{label}</label>
       <div className="relative">
         <select
-          className="w-full bg-dark border border-dark-border text-white text-sm py-2 px-3 pr-8 rounded appearance-none outline-none focus:border-yellow cursor-pointer"
+          className="w-full bg-dark border border-dark-border text-theme text-sm py-2 px-3 pr-8 rounded appearance-none outline-none focus:border-yellow cursor-pointer"
           value={value}
           onChange={e => onChange(e.target.value)}
         >
@@ -17,7 +17,7 @@ function SelectDropdown({ label, value, onChange, options, className = '' }) {
             <option key={opt.value} value={opt.value}>{opt.label}</option>
           ))}
         </select>
-        <ChevronDown size={16} className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+        <ChevronDown size={16} className="absolute right-2 top-1/2 -translate-y-1/2 text-theme-subtle pointer-events-none" />
       </div>
     </div>
   );
@@ -56,17 +56,17 @@ export default function FilterBar({ visible = true }) {
           options={depotList.map(d => ({ value: String(d.code), label: `${d.name}` }))}
         />
         <div>
-          <label className="block text-xs text-gray-400 mb-1">Assigned Date :</label>
+          <label className="block text-xs text-theme-subtle mb-1">Assigned Date :</label>
           <div className="flex gap-1">
             <input
               type="date"
-              className="flex-1 bg-dark border border-dark-border text-white text-sm py-2 px-2 rounded outline-none focus:border-yellow"
+              className="flex-1 bg-dark border border-dark-border text-theme text-sm py-2 px-2 rounded outline-none focus:border-yellow"
               value={dateFrom}
               onChange={e => setDateFrom(e.target.value)}
             />
             <input
               type="date"
-              className="flex-1 bg-dark border border-dark-border text-white text-sm py-2 px-2 rounded outline-none focus:border-yellow"
+              className="flex-1 bg-dark border border-dark-border text-theme text-sm py-2 px-2 rounded outline-none focus:border-yellow"
               value={dateTo}
               onChange={e => setDateTo(e.target.value)}
             />
